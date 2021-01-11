@@ -11,18 +11,26 @@ bot.on("polling_error", console.log);
 bot.onText(/\/Hi/,(msg, match) => {
     const chatId = msg.chat.id;
     const text = match.input.split('~')[1];
+    let dt = '';
+    if(text){
+       dt = text;
+    }
     let first_name = msg.from.first_name || ''
     let last_name = msg.from.last_name || ''
-    bot.sendMessage(chatId, `Hi ${first_name} ${last_name} ${emj.smile} ~${text}`);
+    bot.sendMessage(chatId, `Hi ${first_name} ${last_name} ${emj.smile} ~${dt}`);
 });
 
 bot.onText(/hi/,(msg, match) => {
     const chatId = msg.chat.id;
     const text = match.input.split('~')[1];
+    let dt = '';
+    if(text){
+       dt = text;
+    }
     console.log(match.input)
     let first_name = msg.from.first_name || ''
     let last_name = msg.from.last_name || ''
-    bot.sendMessage(chatId, `Hi ${first_name} ${last_name} ${emj.smile} ~${text}`);
+    bot.sendMessage(chatId, `Hi ${first_name} ${last_name} ${emj.smile} ~${dt}`);
 });
 
 bot.onText(/\/JSON/,(msg, match) => {
